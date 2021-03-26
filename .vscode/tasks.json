@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build lsmtree",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-std=c++17",
+                "-o",
+                //"correctness",
+                //"correctness.cc",
+                "persistence",
+                "persistence.cc",
+                "test.h",
+                "sstable.cc",
+                "kvstore_api.h",
+                "skiplist.h",
+                "kvstore.cc" //here
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run lsmtree",
+            "type": "shell",
+            "command": "${workspaceRoot}/lsmtree",
+            "args": [ ],
+            "dependsOn": "Build lsmtree",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Debug lsmtree",
+            "type": "cppdbg",
+            "request": "launch",
+            // "targetArchitecture": "x64",
+            //"program": "${workspaceRoot}/correctness",
+            "program": "${workspaceRoot}/persistence",
+            "args": ["-v","-t"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": true,
+            "linux": {
+                "MIMode": "gdb"
+            },
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "windows": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "gdb.exe"
+            },
+            "preLaunchTask": "Build lsmtree"
+        }
+    ]
+}
